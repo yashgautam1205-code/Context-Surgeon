@@ -1,0 +1,97 @@
+:root {
+    --ink: #163a35;
+    --muted: #5e716c;
+    --line: #d4dfda;
+    --paper: #ffffff;
+    --canvas: #eef3f0;
+    --green: #176b55;
+    --mint: #d8eee4;
+    --copper: #b84c2d;
+}
+.stApp {
+    background-color: var(--canvas);
+    background-image: linear-gradient(rgba(22,58,53,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(22,58,53,.025) 1px, transparent 1px);
+    background-size: 28px 28px;
+    color: var(--ink);
+}
+.block-container { max-width: 1440px; padding-top: 1.4rem; padding-bottom: 3rem; }
+.brandbar {
+    display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem;
+    padding: 1.45rem 1.7rem; margin-bottom: 1.4rem;
+    color: #f4faf6; background: var(--ink); border-bottom: 4px solid #db8052;
+}
+.brand-kicker { margin: 0 0 .4rem; color: #a9d8c2; font: 700 .72rem/1.2 'Aptos', 'Segoe UI', sans-serif; text-transform: uppercase; letter-spacing: .12em; }
+.brandbar h1 { margin: 0; color: #fff; font: 500 clamp(2rem, 4vw, 3.1rem)/1.04 Georgia, 'Times New Roman', serif; letter-spacing: 0; }
+.brand-subtitle { margin: .45rem 0 0; color: #d0e0d9; font-size: .96rem; }
+.brand-stamp { padding: .45rem .7rem; border: 1px solid #78978d; color: #d6e7df; font-size: .73rem; font-weight: 700; text-align: center; text-transform: uppercase; }
+h2, h3 { color: var(--ink); letter-spacing: 0; }
+h2 { font-family: Georgia, 'Times New Roman', serif; }
+.section-kicker { margin: .25rem 0 .65rem; color: var(--green); font-size: .73rem; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; }
+[data-testid="stMetric"] { min-height: 102px; padding: 14px 16px; background: var(--paper); border: 1px solid var(--line); border-top: 3px solid var(--green); border-radius: 5px; }
+[data-testid="stMetricLabel"] { color: var(--muted); font-weight: 650; }
+[data-testid="stMetricValue"] { color: var(--ink); font-variant-numeric: tabular-nums; }
+div[data-testid="stTextArea"] label, div[data-testid="stTextInput"] label,
+div[data-testid="stSelectbox"] label, div[data-testid="stNumberInput"] label { color: var(--ink) !important; font-weight: 700; }
+div[data-testid="stTextInput"] label p, div[data-testid="stTextInput"] input,
+div[data-testid="stNumberInput"] input { color: var(--ink) !important; }
+div[data-testid="stTextInput"] [data-baseweb="input"],
+div[data-testid="stNumberInput"] [data-baseweb="input"],
+div[data-testid="stSelectbox"] [data-baseweb="select"] > div {
+    color: var(--ink) !important; background: #fff !important; border-color: var(--line) !important;
+}
+div[data-testid="stTextInputRootElement"] {
+    min-height: 42px;
+    background: #fff !important;
+    border: 1.5px solid #78978d !important;
+    border-radius: 5px !important;
+    box-shadow: 0 0 0 1px rgba(22, 58, 53, .08) !important;
+}
+div[data-testid="stTextInputRootElement"]:focus-within {
+    border-color: var(--green) !important;
+    box-shadow: 0 0 0 2px rgba(23, 107, 85, .18) !important;
+}
+div[data-testid="stTextInput"] input, div[data-testid="stNumberInput"] input { background: transparent !important; }
+div[data-testid="stTextInput"] button svg { color: var(--ink) !important; fill: var(--ink) !important; }
+div[data-testid="stTextArea"] textarea { min-height: 130px; font-family: ui-monospace, 'Cascadia Code', Consolas, monospace; font-size: .88rem; line-height: 1.5; background: #fff; border-color: var(--line); border-radius: 5px; }
+div.stButton > button[kind="primary"] { color: #fff; background: var(--green); border: 1px solid var(--green); font-weight: 750; }
+div.stButton > button[kind="primary"]:hover { color: #fff; background: #10533f; border-color: #10533f; }
+div.stButton > button:not([kind="primary"]) { color: var(--ink) !important; background: #fff !important; border: 1px solid var(--line) !important; }
+div[data-testid="stDownloadButton"] button { color: var(--ink) !important; background: #fff !important; border: 1px solid var(--line) !important; }
+div[data-testid="stDownloadButton"] button:hover { color: #fff !important; background: var(--green) !important; border-color: var(--green) !important; }
+div[data-testid="stExpander"] details > summary { color: var(--ink) !important; background: #e5efeb !important; border: 1px solid var(--line) !important; border-radius: 5px !important; }
+div[data-testid="stExpander"] details > summary p,
+div[data-testid="stExpander"] details > summary span,
+div[data-testid="stExpander"] details > summary svg { color: var(--ink) !important; fill: var(--ink) !important; }
+div[data-testid="stExpander"] details > summary:hover { background: #d9e8e1 !important; }
+div[data-testid="stExpander"] [data-testid="stExpanderDetails"] { color: var(--ink) !important; background: #fff !important; border: 1px solid var(--line) !important; border-top: 0 !important; }
+div[data-testid="stCodeBlock"], div[data-testid="stCode"] { color: var(--ink) !important; background: #f7faf8 !important; border: 1px solid var(--line) !important; }
+div[data-testid="stCodeBlock"] pre, div[data-testid="stCodeBlock"] code,
+div[data-testid="stCode"] pre, div[data-testid="stCode"] code { color: var(--ink) !important; background: transparent !important; white-space: pre-wrap !important; overflow-wrap: anywhere !important; }
+[data-testid="stDataFrame"] {
+    --gdg-bg-cell: #ffffff;
+    --gdg-bg-cell-medium: #f1f6f3;
+    --gdg-bg-header: #e5efeb;
+    --gdg-bg-header-hovered: #d9e8e1;
+    --gdg-text-dark: #163a35;
+    --gdg-text-medium: #38564e;
+    --gdg-text-light: #5e716c;
+    --gdg-text-header: #163a35;
+    --gdg-text-group-header: #163a35;
+    --gdg-border-color: #d4dfda;
+    --gdg-horizontal-border-color: #d4dfda;
+    color: var(--ink) !important;
+    background: #fff !important;
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    overflow: hidden;
+}
+.quality-status { display: inline-block; padding: .34rem .6rem; color: var(--ink); background: var(--mint); border-left: 3px solid var(--green); font-size: .75rem; font-weight: 800; text-transform: uppercase; }
+.diff-output { padding: 1rem; white-space: pre-wrap; overflow-wrap: anywhere; background: #fff; border: 1px solid var(--line); border-radius: 5px; font-family: ui-monospace, 'Cascadia Code', Consolas, monospace; font-size: .88rem; line-height: 1.6; }
+.diff-kept { background: #d8eee4; }
+.diff-removed { color: #782f24; background: #f8d7d2; text-decoration: line-through; }
+.diff-added { color: #14533f; background: #c8ead8; }
+@media (max-width: 700px) {
+    .brandbar { align-items: flex-start; flex-direction: column; padding: 1.2rem; }
+    .brand-stamp { align-self: flex-start; }
+    .block-container { padding-left: 1rem; padding-right: 1rem; }
+}

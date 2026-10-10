@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import re
 
-
 _NUMBER = re.compile(
     r"(?<![\w])(?:\d{4}[-/]\d{1,2}[-/]\d{1,2}|\d{1,2}:\d{2}(?::\d{2})?|"
     r"[-+]?\d+(?:[.,]\d+)*(?:%|[A-Za-z]+)?)(?!\w)"
@@ -67,18 +66,26 @@ def audit_preservation(originals: dict[str, str], compressed: dict[str, str]) ->
             missing = sorted(required - retained)
             required_total += len(required)
             retained_total += len(retained)
-            rows.append({
-                "input": label.replace("_", " ").title(),
-                "category": category,
-                "required": len(required),
-                "retained": len(retained),
-                "missing": missing,
-                "coverage_percentage": (len(retained) / len(required) * 100) if required else 100.0,
-            })
+            rows.append(
+                {
+                    "input": label.replace("_", " ").title(),
+                    "category": category,
+                    "required": len(required),
+                    "retained": len(retained),
+                    "missing": missing,
+                    "coverage_percentage": (len(retained) / len(required) * 100)
+                    if required
+                    else 100.0,
+                }
+            )
 
     coverage = (retained_total / required_total * 100) if required_total else None
     return {
-        "status": "not_applicable" if required_total == 0 else "pass" if retained_total == required_total else "warning",
+        "status": "not_applicable"
+        if required_total == 0
+        else "pass"
+        if retained_total == required_total
+        else "warning",
         "retained_markers": retained_total,
         "required_markers": required_total,
         "coverage_percentage": coverage,
